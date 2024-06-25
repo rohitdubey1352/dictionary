@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Inter:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 55px 352px;
+  min-height: 100vh;
+  /* font-family: "Lora", serif; */
+  font-family: "Inconsolata", monospace;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  margin: 0 0 1rem 2.6rem;
+}
+
+li::marker {
+  color: #A345ED;
+}
+
+.dictionary {
+  position: relative;
+  width: auto;
+  height: 100%;
+}
+
+.dictionary nav {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.dropdown {
+  display: flex;
+  gap: 1rem;
+}
+
+.dropdown .fontName {
+  color: #757575;
+  font-weight: 800;
+}
+
+#toggleMode {
+  position: relative;
+  width: 2.5rem;
+  height: 1.25rem;
+  border-radius: 0.625rem;
+  background: #757575;
+  border: none;
+  margin-top: 0.4rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#toggleMode::after {
+  content: '';
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #fff;
+  left: 15%;
+  top: 50%;
+  transform: translate(-15%, -50%);
+  transition: left 0.3s;
+}
+
+#toggleMode.toggled {
+  background: #A345ED;
+  /* Optional: Change background color when toggled */
+}
+
+#toggleMode.toggled::after {
+  left: 85%;
+  transform: translate(-85%, -50%);
+}
+
+/* Dictionary */
+.dictionary_section {
+  position: relative;
+}
+
+.searchBar {
+  position: relative;
+}
+
+.searchBar input {
+  position: relative;
+  width: 100%;
+  height: 3rem;
+  border: none;
+  outline: none;
+  border-radius: 1rem;
+  background: #F4F4F4;
+  margin-top: 2rem;
+  padding-left: 1.4rem;
+}
+
+input::placeholder {
+  font-weight: 600;
+  letter-spacing: .06rem;
+  color: #75757590;
+}
+
+.searchBar img {
+  position: absolute;
+  top: 60%;
+  right: 4%;
+  z-index: 1;
+}
+
+.error-message,
+.loading {
+  text-align: center;
+  padding: 2rem 4rem;
+}
+
+
+.error-message p {
+  margin-top: 2rem;
+}
+
+.emoji {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* heading */
+.dictionary .result {
+  position: relative;
+  margin: 3rem 0;
+}
+
+.dictionary .heading {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.6rem 0;
+}
+
+.subHeading h2 {
+  font-size: 64px;
+}
+
+.subHeading h3 {
+  font-weight: 800;
+  margin-top: 1rem;
+  color: #A345ED;
+}
+
+.audioIcon {
+  width: 80%;
+}
+
+/* nounHeading */
+.partOfSpeech {
+  position: relative;
+  margin: 2rem 0;
+}
+
+.partOfSpeech h4 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #757575;
+  margin-top: 1rem;
+}
+
+.nounHeading {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nounHeading::before {
+  content: '';
+  position: absolute;
+  width: calc(100% - 30%);
+  height: .01rem;
+  top: 50%;
+  right: 0;
+  background: #ffffff40;
+}
+
+/* synonyms */
+.synonyms {
+  position: relative;
+  display: flex;
+  justify-content: start;
+  gap: 2rem;
+  align-items: start;
+}
+
+.synonyms p {
+  padding-top: 1rem;
+  font-weight: 700;
+  color: #A345ED;
+}
+
+.source {
+  position: absolute;
+  bottom: -4rem;
+  display: flex;
+  gap: .6rem;
+}
+
+.source h4 {
+  text-align: left;
+  color: #757575;
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+.source a {
+  color: #757575;
+}
+
+@media screen and (max-width: 720px) {
+  body {
+    padding: 2rem;
+  }
+}
